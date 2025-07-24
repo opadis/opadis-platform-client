@@ -3,7 +3,7 @@ import styles from "./Input.module.css";
 
 export interface InputProps{
     label?: string
-    type?: 'text' | 'password' | 'email'
+    type?: 'text' | 'password' | 'email'| 'date'| 'file'
     placeholder: string
     id: string
     hasError?: boolean

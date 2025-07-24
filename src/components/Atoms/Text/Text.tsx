@@ -3,7 +3,7 @@ import { cn } from "../../../utils/cn";
 
 export interface TextProps {
     type?: 'title' | 'subtitle' | 'body';
-    label: string;
+    label: React.ReactNode;
     as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
