@@ -4,41 +4,45 @@ import { Text } from "../../Atoms/Text/Text";
 import type { FormHTMLAttributes } from "react";
 
 export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
-    id : string;
-    title?: string
-    campo: { 
+    id: string;
+    title?: string;
+    field: { 
         label: string; 
         type?: 'text' | 'password' | 'email'| 'date'| 'file'; 
-        placeholder: string; 
+        placeholder?:string; 
         id: string; 
-        
     }[];
+    submitInput?: string
 }
 
 export const Form = ({
     id,
-    campo,
+    field,
     title,
+    submitInput,
     ...props
 }: FormProps) => {
     return (
         <div>
-            <header>
+            {title && (
+                <header>
                 <Text as="h1" type="title" label={title} />
-            </header>
+                </header>)
+            }
         <form
             id={id}
             {...props}
         >
-            {campo.map(campo => (
+            {field.map((field, index) => (
                 <Input
-                    label={campo.label}
-                    type={campo.type}
-                    placeholder={campo.placeholder}
-                    id={campo.id}
+                    key={index + 1}
+                    label={field.label}
+                    type={field.type ?? 'text'}
+                    placeholder={field.placeholder}
+                    id={field.id}
                 />
             ))}
-            <Button type="submit">enviar</Button>
+            <Button type="submit"><Text as="p" type="title" label={submitInput ?? 'Enviar'} /></Button>
         </form>
         </div>
     );
