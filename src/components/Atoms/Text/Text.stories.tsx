@@ -1,33 +1,33 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Text } from './Text' // o la ruta que uses
+import type { Meta, StoryObj } from "@storybook/react";
+import { Text } from "./text"; // o la ruta que uses
 
 const meta: Meta<typeof Text> = {
-    title: 'Atoms/Text',
-    component: Text,
-    tags: ['autodocs'],
-}
+  title: "Atoms/Text",
+  component: Text,
+  tags: ["autodocs"],
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Text>
+type Story = StoryObj<typeof Text>;
 
 export const Title: Story = {
-    args: {
-        type: 'title',
-        label: 'HOLA',
-    },
-}
+  args: {
+    type: "title",
+    label: "HOLA",
+  },
+};
 
 export const Subtitle: Story = {
-    args: {
-        type: 'subtitle',
-        label: 'Hola',
-    },
-}
+  args: {
+    type: "subtitle",
+    label: "Hola",
+  },
+};
 
 export const Body: Story = {
-    args: {
-        type: 'body',
-        label: 'hola',
-    },
-}
+  args: {
+    type: "body",
+    label: "hola",
+  },
+};
