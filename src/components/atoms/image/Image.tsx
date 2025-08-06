@@ -1,6 +1,5 @@
-
 import type { ImgHTMLAttributes } from 'react';
-import { cn } from "../../../utils/cn";
+import { cn } from "@/utils/cn";
 
 export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     alt: string;
@@ -10,7 +9,6 @@ export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     size?: string;
     loading?: 'lazy' | 'eager';
 }
-
 
 export const Image = ({
     alt,

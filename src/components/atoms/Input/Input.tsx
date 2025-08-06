@@ -1,4 +1,4 @@
-import { cn } from "../../../utils/cn";
+import { cn } from "@/utils/cn";
 import styles from "./Input.module.css";
 
 export interface InputProps {
