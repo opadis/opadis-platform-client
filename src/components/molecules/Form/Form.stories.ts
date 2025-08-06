@@ -25,7 +25,7 @@ export const Default: Story = {
             { label: 'Email', type: 'email', placeholder: 'email', id: 'email' },
             { label: 'password', type: 'password', placeholder: 'contraseña', id: 'password' },
             { label: 'fecha', type: 'date', placeholder: 'fecha', id: 'fecha' },
-            {label: 'file', type: 'file', placeholder: 'file', id: 'file' },
+            { label: 'file', type: 'file', placeholder: 'file', id: 'file' },
         ],
     },
 }
