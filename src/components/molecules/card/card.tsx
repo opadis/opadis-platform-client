@@ -1,5 +1,5 @@
-import { Text } from "@/components/atoms/Text/Text";
-import { Button } from "@/components/atoms/button/Button";
+import { Text } from "../../atoms/text/text";
+import { Button } from "../../atoms/button/button";
 
 export interface CardProps {
   title: string;

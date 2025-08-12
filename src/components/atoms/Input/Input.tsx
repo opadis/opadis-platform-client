@@ -1,42 +1,40 @@
-import { cn } from "@/utils/cn";
-import styles from "./Input.module.css";
-
-export interface InputProps {
-  label?: string;
-  type?: "text" | "password" | "email" | "date" | "file";
-  placeholder?: string;
+interface InputProps {
   id: string;
-  hasError?: boolean;
+  label: string;
+  placeholder?: string;
+  type?: "text" | "password" | "email" | "date" | "file";
   className?: string;
   errorMessage?: string;
+  ariaLabel?: string
 }
 
 export function Input({
-  label,
   id,
+  label,
   placeholder,
-  type,
-  hasError,
+  type = "text",
   className,
   errorMessage,
-  ...props
+  ariaLabel
 }: InputProps) {
+  const describedBy = errorMessage ? `${id}-error` : undefined;
+
   return (
-    <div className={styles.containerInput}>
-      <label className={styles.label} htmlFor={id}>
-        {label}
-      </label>
-
+    <div className={className}>
+      <label htmlFor={id}>{label}</label>
       <input
-        className={cn(styles.input, hasError && styles.error, className)}
         id={id}
-        type={type ?? "text"}
+        aria-label={ariaLabel}
+        name={id}
+        type={type}
         placeholder={placeholder}
-        {...props}
+        aria-describedby={describedBy}
+        aria-invalid={!!errorMessage}
       />
-
-      {hasError && (
-        <p className={cn(styles["error-message"])}>{errorMessage}</p>
+      {errorMessage && (
+        <span id={describedBy} role="alert">
+          {errorMessage}
+        </span>
       )}
     </div>
   );

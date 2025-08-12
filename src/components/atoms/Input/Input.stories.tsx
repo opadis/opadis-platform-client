@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "./Input";
+import { Input } from "./input";
 
 const meta: Meta<typeof Input> = {
   title: "Atoms/Input",
@@ -16,6 +16,7 @@ export const text: Story = {
     type: "text",
     label: "Ingrese su nombre",
     placeholder: "Ingrese su nombre",
+    ariaLabel: "Ingrese su nombre",
   },
 };
 
@@ -24,6 +25,7 @@ export const password: Story = {
     type: "password",
     label: "Ingrese su contraseña",
     placeholder: "Ingrese su contraseña",
+    ariaLabel: "Ingrese su contraseña",
   },
 };
 
@@ -32,5 +34,6 @@ export const email: Story = {
     type: "email",
     label: "Ingrese su email",
     placeholder: "Ingrese su email",
+    ariaLabel: "Ingrese su email",
   },
 };
